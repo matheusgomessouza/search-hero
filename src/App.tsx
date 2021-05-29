@@ -1,16 +1,11 @@
 import React from 'react';
-
-import { Background, Heading, Search } from './styles';
-
+import Home  from './pages/Home';
 
 function App() {
-
   return (
-    <Background>
-      <Heading>Quer saber mais sobre seu herói favorito?</Heading>
-      
-      <Search type="text" placeholder="Comece por aqui..." />
-    </Background>
+    <div>
+      <Home/>
+    </div>
   );
 }
 
