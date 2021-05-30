@@ -9,13 +9,14 @@ export default function Home() {
 
   //Lógica para puxar dados da API Marvel
   var ts = new Date().getTime();
-  var privateKey = "";
+  var privateKey = process.env.REACT_APP_PRIVATE_KEY as string;
   var publicKey = "42341e55d54325c55147ee06f844496a"
   var mixed = ts + privateKey + publicKey;
-  const hash = MD5(mixed).toString()
+  const hash = MD5(mixed).toString();
+  var heroName = "Adam Warlock";
 
 
-  api.get(`http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+  api.get(`http://gateway.marvel.com/v1/public/characters?name=${heroName}&ts=${ts}&apikey=${publicKey}&hash=${hash}`)
       .then(function (response) {
         // handle success
         console.log(response);
