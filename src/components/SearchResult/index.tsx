@@ -1,7 +1,12 @@
 import React from 'react';
 
+import { Card, Image, Title } from './styles'
+
 export default function SearchResultItem() {
   return (
-    <div></div>
+    <Card>
+      <Image src=""/>
+      <Title title=""/>
+    </Card>
   )
 }
