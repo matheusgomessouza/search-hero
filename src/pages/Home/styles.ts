@@ -38,7 +38,6 @@ export const Search = styled.input`
   outline: none;
   display: block;
   margin: 0 auto;
-  border-radius: 15px;
   border: none;
   font-family: 'Limelight', cursive;
 `;
