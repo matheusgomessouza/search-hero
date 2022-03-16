@@ -16,7 +16,6 @@ interface IHeroProps {
 }
 
 export default function Home() {
-
 	// Security Treatement and calling API Marvel
 	const ts = new Date().getTime();
 	const privateKey = process.env.REACT_APP_PRIVATE_KEY as string;
@@ -61,11 +60,13 @@ export default function Home() {
 					/>
 					{console.log(hero)}
 					{hero.map(result => (
-						<SearchResultItem
-							key={result.id} 
-							thumbnail={result.thumbnail}
-							name={result.name}
-						/>
+						searchTerm !== '' && (
+							<SearchResultItem
+								key={result.id} 
+								thumbnail={result.thumbnail}
+								name={result.name}
+							/>
+						)
 					))}
 				</Form>
 				<Footer/>

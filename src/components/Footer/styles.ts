@@ -3,7 +3,7 @@ import styled  from 'styled-components';
 export const Container = styled.footer`
   width: 100vw;
   height: 5vh;
-  background: #000;
+  background: var(--main-background);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,5 +11,6 @@ export const Container = styled.footer`
 
 export const Text = styled.span`
   font-family: 'Limelight', cursive;
-  color: #fff;
+  color: var(--main-font-color);
+  font-size: 0.7em;
 `;

@@ -1,0 +1,12 @@
+:root {
+  --main-font-color: #fff;
+  --main-background: #000;
+  --main-background-faded: rgba(0,0,0, 0.4);
+  --main-text-shadow-faded:rgba(0, 0, 0, 0.7);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
