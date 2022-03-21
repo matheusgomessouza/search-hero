@@ -10,7 +10,9 @@ export const Container = styled.footer`
 `;
 
 export const Text = styled.span`
+  font-size: 0.9em;
   font-family: 'Limelight', cursive;
   color: var(--main-font-color);
-  font-size: 0.7em;
+  text-align: center;
+  padding-block: 5%;
 `;

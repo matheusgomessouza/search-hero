@@ -62,7 +62,8 @@ export default function Home() {
 					{hero.map(result => (
 						searchTerm !== '' && (
 							<SearchResultItem
-								key={result.id} 
+								key={result.id}
+								id={result.id} 
 								thumbnail={result.thumbnail}
 								name={result.name}
 							/>

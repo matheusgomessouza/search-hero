@@ -11,9 +11,16 @@ export const Card = styled.div`
   margin: 0 auto;
   padding: 1% 0 1% 1%;
 
+  a {
+    font-family: fantasy;
+    text-decoration: none;
+    color: var(--main-font-color);
+    margin-left: auto
+  }
+
   @media(max-width: 768px) {
     width: 85vw;
-    padding: 2% 0 2% 5%;
+    padding: 2% 5% 2% 5%;
   }
 `;
 

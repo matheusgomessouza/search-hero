@@ -1,7 +1,7 @@
-import React from 'react';
+import { HeroInfo } from './HeroInfo';
 
-export default function Hero() {
+export function Hero() {
 	return (
-		<h1>Hero</h1>
+		<HeroInfo />		
 	);
 }
