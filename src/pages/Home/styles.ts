@@ -31,9 +31,9 @@ export const Heading = styled.h1`
 `;
 
 export const Search = styled.input`
-  padding: 1%;
+  padding: 1.5%;
   margin: 0 auto;
-  width: 45vw;
+  width: 75vw;
   outline: none;
   display: block;
   margin: 0 auto;

@@ -7,9 +7,9 @@ export const Card = styled.div`
   gap: 12px;
   background: var(--main-background);
   border-radius: 0px 0 20px 20px;
-  width: 45vw;
+  width: 75vw;
   margin: 0 auto;
-  padding: 1% 0 1% 1%;
+  padding: 2%;
 
   a {
     font-family: fantasy;

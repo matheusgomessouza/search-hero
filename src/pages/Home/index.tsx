@@ -58,7 +58,6 @@ export default function Home() {
 						value={searchTerm} 
 						onChange={(e) => setSearchTerm(e.target.value)}
 					/>
-					{console.log(hero)}
 					{hero.map(result => (
 						searchTerm !== '' && (
 							<SearchResultItem

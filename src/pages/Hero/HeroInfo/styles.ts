@@ -14,6 +14,27 @@ export const Container = styled.div`
   .swiper {
     margin-block: 4%;
   }
+
+  .purchase-button {
+    background-color: #fff;
+    width: 50vw;
+    margin: 0 auto;
+    border-radius: 4px;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    display: flex; 
+
+      a { 
+        text-decoration: none;
+        color: #000 !important;
+        font-weight: bold;
+        font-size: 24px;
+        font-family: fantasy
+      }
+  }
 `;
 
 export const Button = styled.button`
@@ -50,10 +71,21 @@ export const Name = styled.h3`
   text-align: center;
 `;
 
+export const Title = styled.h4`
+  color: var(--main-font-color);
+  text-align: center;
+  width: 80vw;
+  margin: 0 auto;
+`;
+
 export const Description = styled.p`
   color: var(--main-font-color);
   font-size: 1.4rem;
   font-family: fantasy;
   text-align: center;
   margin-inline: 50px;
+`;
+
+export const PurchaseButton = styled.div`
+  
 `;

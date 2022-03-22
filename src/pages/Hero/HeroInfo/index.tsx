@@ -11,7 +11,8 @@ import {
 	Image, 
 	Name, 
 	Description, 
-	Container 
+	Container, 
+	Title
 } from './styles';
 
 import { Autoplay, Navigation, Pagination } from 'swiper';
@@ -21,12 +22,19 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-interface IHeroInfoProps {
+interface ICharacterProps {
 	id: number;
 	name: string;
 	thumbnail: { path: string };
 	description: string;
+	urls?:  {
+    type?: string;
+    url: string;
+  }[];
+	title?: string;
 }
+
+type IComicProps = Omit<ICharacterProps,'name' | 'description'>; 
 
 export function HeroInfo() {
 
@@ -38,8 +46,8 @@ export function HeroInfo() {
 	const hash = MD5(mixed).toString();
 	const navigate = useNavigate();
 
-	const [heroInformation, setHeroInformation] = useState<IHeroInfoProps[]>([] as IHeroInfoProps[]);
-	const [comics, setComics] = useState([]);
+	const [heroInformation, setHeroInformation] = useState<ICharacterProps[]>([] as ICharacterProps[]);
+	const [comics, setComics] = useState<IComicProps[]>([] as IComicProps[]);
 
 	useEffect(() => {
 		const URL =  String(window.location.pathname);
@@ -49,7 +57,7 @@ export function HeroInfo() {
 			await api.get(`/v1/public/characters/${heroID}?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
 				.then(function (response) {
 					const heroInfo = response.data.data.results;
-					heroInfo.forEach((element: IHeroInfoProps) => {
+					heroInfo.forEach((element: ICharacterProps) => {
 						setHeroInformation([{
 							id: element.id,
 							name: element.name,
@@ -65,8 +73,6 @@ export function HeroInfo() {
 			await api.get(`/v1/public/characters/${heroID}/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
 				.then(function (response) {
 					const heroComics = response.data.data.results;
-					console.log(heroComics);
-					
 					setComics(heroComics);
 				})
 				.catch(function (error) {
@@ -100,21 +106,32 @@ export function HeroInfo() {
 
 						<Swiper
 							modules={[Navigation, Autoplay, Pagination]}
-							autoHeight={true}
-							updateOnWindowResize={true}
-							slidesPerView={'auto'}
+							centeredSlides
+							slidesPerView="auto"
 							autoplay={{
 								delay: 5000,
 							}}
 						>
-							{comics.map((comic: any) => {
-								return (
+							{comics.map((comic: IComicProps) => {
+								return (		
 									<SwiperSlide key={comic.id}>
 										<Image 
 											src={comic.thumbnail.path + '.jpg'} 
 											width="200px" 
 											height="290px"
 										/>
+										<Title>
+											{comic.title}
+										</Title>
+										<div className="purchase-button">
+											<a 
+												target="_blank"
+												rel="noreferrer"
+												href={comic?.urls?.[1]?.url ?? comic?.urls?.[0]?.url} 
+											>
+												{comic?.urls?.[1]?.url ? 'COMPRAR' : 'DETALHES'}
+											</a>
+										</div>
 									</SwiperSlide>
 								);
 							})}
