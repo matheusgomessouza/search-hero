@@ -38,20 +38,27 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  padding: 1.5%;
-  margin: 40px auto;
-  border-radius: 10px;
-  background-color: #fff;
   border: 0;
-  margin-top: 0;
-  display: block;
+  border-radius: 10px;
+  background-color: var(--main-background);
+
+  padding: 1.5%;
+  margin-top: -5%;
+  
+  display: flex;
+  align-items: center;
+
   font-size: 1.6rem;
   font-family: fantasy;
-  font-weight: bold;
+  color: var(--main-font-color);
   cursor: pointer;
 
   @media(max-width: 768px) {
     padding: 4.5%;
+  }
+
+  svg {
+    margin-right: 10px;
   }
 `;
 

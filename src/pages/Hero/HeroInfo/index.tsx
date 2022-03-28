@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { api } from '../../../services/api';
 
-
 import Footer from '../../../components/Footer';
 import { 
 	Button, 
@@ -14,6 +13,7 @@ import {
 	Container, 
 	Title
 } from './styles';
+import { BsBoxArrowLeft } from 'react-icons/bs';
 
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -85,11 +85,12 @@ export function HeroInfo() {
 		<>
 			<Container>
 				<Button onClick={() => { navigate('/'); }}>
+					<BsBoxArrowLeft />{''}
 					Search a Hero
 				</Button>
 
 				{heroInformation.map(info => (
-					<div key={info.id}>
+					<div style={{ paddingTop: '10%' }} key={info.id}>
 						<Image src={info.thumbnail.path} alt="" />
 						<Name>{info.name}</Name>
 						{info.description ? (
@@ -127,9 +128,9 @@ export function HeroInfo() {
 											<a 
 												target="_blank"
 												rel="noreferrer"
-												href={comic?.urls?.[1]?.url ?? comic?.urls?.[0]?.url} 
+												href={comic?.urls?.[0]?.url ?? comic?.urls?.[1]?.url} 
 											>
-												{comic?.urls?.[1]?.url ? 'COMPRAR' : 'DETALHES'}
+												{comic?.urls?.[0]?.url ? 'DETAILS' : 'BUY'}
 											</a>
 										</div>
 									</SwiperSlide>
