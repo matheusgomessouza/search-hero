@@ -11,6 +11,16 @@ export const Card = styled.div`
   margin: 0 auto;
   padding: 2%;
 
+  @media (max-width: 1024px) {
+    width: 85vw;
+    padding: 2% 5% 2% 5%;
+  }
+
+  @media (min-width: 1366px) {
+    width: 40vw;
+    padding: 1%;
+  }
+
   a {
     font-family: fantasy;
     text-decoration: none;
@@ -18,10 +28,6 @@ export const Card = styled.div`
     margin-left: auto
   }
 
-  @media(max-width: 768px) {
-    width: 85vw;
-    padding: 2% 5% 2% 5%;
-  }
 `;
 
 export const Image = styled.img`

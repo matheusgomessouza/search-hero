@@ -79,7 +79,7 @@ export function HeroInfo() {
 					console.log(error);
 				});
 		})();
-	}, []);
+	}, [hash, publicKey, ts]);
 
 	return (
 		<>
@@ -91,7 +91,7 @@ export function HeroInfo() {
 
 				{heroInformation.map(info => (
 					<div style={{ paddingTop: '10%' }} key={info.id}>
-						<Image src={info.thumbnail.path} alt="" />
+						<Image src={info.thumbnail.path} alt='' />
 						<Name>{info.name}</Name>
 						{info.description ? (
 							<Description>
@@ -108,7 +108,7 @@ export function HeroInfo() {
 						<Swiper
 							modules={[Navigation, Autoplay, Pagination]}
 							centeredSlides
-							slidesPerView="auto"
+							slidesPerView='auto'
 							autoplay={{
 								delay: 5000,
 							}}
@@ -118,16 +118,16 @@ export function HeroInfo() {
 									<SwiperSlide key={comic.id}>
 										<Image 
 											src={comic.thumbnail.path + '.jpg'} 
-											width="200px" 
-											height="290px"
+											width='200px' 
+											height='290px'
 										/>
 										<Title>
 											{comic.title}
 										</Title>
-										<div className="purchase-button">
+										<div className='purchase-button'>
 											<a 
-												target="_blank"
-												rel="noreferrer"
+												target='_blank'
+												rel='noreferrer'
 												href={comic?.urls?.[0]?.url ?? comic?.urls?.[1]?.url} 
 											>
 												{comic?.urls?.[0]?.url ? 'DETAILS' : 'BUY'}

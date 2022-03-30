@@ -39,10 +39,16 @@ export const Search = styled.input`
   margin: 0 auto;
   border: none;
   font-family: 'Limelight', cursive;
+  font-size: 1.1rem;
 
-  @media (max-width: 768px) {
-    padding: 5%;
+  @media (max-width: 1024px) {
+    padding: 3%;
     width: 85vw;
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 1366px) {
+    padding: 1%;
+    width: 40vw
   }
 `;

@@ -1,18 +1,15 @@
-import { render, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event'
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Home from '../pages/Home';
 
 describe('Home page', () => {
 	test('it should render a SearchItem after typing a valid SearchTerm', async () => {
-    const { getByRole, findByRole, debug } = render(
-      <Home />
-    );
-    
-    userEvent.type(getByRole('searchbox'), 'Wolverine');
+		render(
+			<Home />
+		);
 
-    const SearchResult = await findByRole('img', { name: 'Wolverine' });
-    debug();
-
-    expect(SearchResult).toBeInTheDocument();
+		userEvent.type(screen.getByRole('searchbox'), 'Wolverine');
+		const SearchResult = await screen.findByRole('img', { name: 'Wolverine' });
+		expect(SearchResult).toBeInTheDocument();
 	});
 });

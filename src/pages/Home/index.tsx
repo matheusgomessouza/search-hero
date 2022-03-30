@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect, useState } from 'react';
 
 import { api } from '../../services/api';
@@ -12,7 +11,7 @@ interface IHeroProps {
 	id: number;
 	name: string;
 	description: string;
-	thumbnail: string | any;
+	thumbnail: { path: string };
 }
 
 export default function Home() {
@@ -36,7 +35,7 @@ export default function Home() {
 							id: element.id,
 							name: element.name,
 							description: element.description,
-							thumbnail: element.thumbnail.path + '.jpg',
+							thumbnail: { path: element?.thumbnail?.path + '.jpg' },
 						}]);
 					});					
 				})
@@ -44,17 +43,17 @@ export default function Home() {
 					console.log(error, 'Nothing could be found');
 				});
 		}
-	}, [searchTerm]);
+	}, [searchTerm, hash, publicKey, ts]);
 
 
 	return (
 		<>
 			<Background>
 				<Form>
-					<Heading>Want to know more about some character?</Heading>
+					<Heading>Who is...?</Heading>
 					<Search 
-						type="search" 
-						placeholder="Begin typing..." 
+						type='search' 
+						placeholder='Begin typing...' 
 						value={searchTerm} 
 						onChange={(e) => setSearchTerm(e.target.value)}
 					/>
@@ -63,7 +62,7 @@ export default function Home() {
 							<SearchResultItem
 								key={result.id}
 								id={result.id} 
-								thumbnail={result.thumbnail}
+								thumbnail={result.thumbnail.path}
 								name={result.name}
 							/>
 						)

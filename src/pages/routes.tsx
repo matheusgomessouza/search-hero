@@ -9,9 +9,9 @@ import Home from './Home';
 export function Router() {
 	return (
 		<Routes>
-			<Route path="/" element={<Home />} />
-			<Route path="/hero" element={<Hero />}>
-				<Route path=":id" element={<HeroInfo />} />
+			<Route path='/' element={<Home />} />
+			<Route path='/hero' element={<Hero />}>
+				<Route path=':id' element={<HeroInfo />} />
 			</Route>
 		</Routes>
 	);

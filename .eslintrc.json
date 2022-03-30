@@ -8,8 +8,8 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "react-app",
-        "react-app/jest"
-        
+        "react-app/jest",
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -42,6 +42,12 @@
             "error",
             "always"
         ],
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+            "warn",
+            {"extensions": [".js", ".jsx", ".tsx"]}
+        ],
+        "import/prefer-default-export": "off",
+        "jsx-quotes": ["error", "prefer-single"]
     }
 }

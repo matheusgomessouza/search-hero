@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-export default {
+const config = {
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
 
@@ -175,31 +175,31 @@ export default {
 
 	// A map from regular expressions to paths to transformers
 	transform: {
-    "^.+\\.(t|j)sx?$": [
-      "@swc/jest",
-      {
-        jsc: {
-          parser: {
-            syntax: "typescript",
-            tsx: true,
-            decorators: true,
-          },
-          keepClassNames: true,
-          transform: {
-            legacyDecorator: true,
-            decoratorMetadata: true,
-            react: {
-              runtime: "automatic",
-            },
-          },
-        },
-        module: {
-          type: "es6",
-          noInterop: false,
-        },
-      },
-    ],
-  },
+		'^.+\\.(t|j)sx?$': [
+			'@swc/jest',
+			{
+				jsc: {
+					parser: {
+						syntax: 'typescript',
+						tsx: true,
+						decorators: true,
+					},
+					keepClassNames: true,
+					transform: {
+						legacyDecorator: true,
+						decoratorMetadata: true,
+						react: {
+							runtime: 'automatic',
+						},
+					},
+				},
+				module: {
+					type: 'es6',
+					noInterop: false,
+				},
+			},
+		],
+	},
 
 	// An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
 	// transformIgnorePatterns: [
@@ -219,3 +219,5 @@ export default {
 	// Whether to use watchman for file crawling
 	// watchman: true,
 };
+
+export default config;
