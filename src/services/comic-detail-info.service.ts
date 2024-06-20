@@ -7,7 +7,7 @@ export async function comicInfoDetailService(heroID: number): Promise<IComicsHer
 		const { data } = await api.get(`v1/public/characters/${heroID}/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`);
 		const comicsInfo = data.data.results;
 		return comicsInfo;
-	} catch (error: any) {
-		throw new Error(error);
+	} catch (error) {
+		throw new Error(String(error));
 	}
 };

@@ -14,7 +14,7 @@ export async function getHeroLabelService(typedWord: string): Promise<IHeroProps
 			thumbnail: { path: element?.thumbnail?.path + '.jpg' }
 		}));
 		return result;
-	} catch (error: any) {	
-		throw new Error(error);
+	} catch (error) {	
+		throw new Error(String(error));
 	}
 };

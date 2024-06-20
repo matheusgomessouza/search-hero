@@ -7,7 +7,7 @@ export async function getHeroDetailInfo(heroID: number): Promise<IHeroDetailProp
 		const { data } = await api.get(`/v1/public/characters/${heroID}?ts=${ts}&apikey=${publicKey}&hash=${hash}`);
 		const heroDetailResponse = data.data.results;
 		return heroDetailResponse;
-	} catch (error: any) {
-		throw new Error(error);
+	} catch (error) {
+		throw new Error(String(error));
 	} 
 }
