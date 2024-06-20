@@ -15,7 +15,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "env-cmd -f .env react-scripts start PORT=3000",
+    "start": "env-cmd -f .env react-scripts start PORT=3001",
     "build": "env-cmd -f .env react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject"
