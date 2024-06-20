@@ -1,8 +1,8 @@
-![](/assets_for_readme/logo_resized.png)
+![](/public/logo_resized.png)
 
 Cansado de ser um nerd incompleto? Seus problemas acabaram! Com o Search Hero você vai descobrir TUDO sobre seus personagens favoritos da Marvel Comics™ / Tired of being a incomplete nerd? Your problems are OVER! With Search Hero you'll discover EVERYTHING about your favorites characters of Marvel Comic's™️
 
-![](/assets_for_readme/screen.png)
+![](/public/screen.png)
 
 ⚙ **Tecnologias Utilizadas**
 
