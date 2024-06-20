@@ -1,21 +1,30 @@
 import styled  from 'styled-components';
 
-export const Container = styled.footer`
+interface IFooterProps {
+  width?: string;
+}
+
+export const Container = styled.footer<IFooterProps>`
   width: 100vw;
-  background: var(--main-background);
+  width: ${(props) => props.width ? props.width : '100%'};;
+  background: var(--variant-background);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 1
+  margin-top: 1rem
 `;
 
 export const Text = styled.span`
   font-size: 0.9em;
   font-family: 'Limelight', cursive;
-  color: var(--main-font-color);
+  color: var(--variant-font-color);
   text-align: center;
-  padding-block: 1.5%;
+  padding-block: 0.5%;
 
   @media(max-width: 768px) {
-    padding-block: 5%;
+    padding-block: 2%;
   }
 `;

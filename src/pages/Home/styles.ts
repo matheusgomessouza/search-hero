@@ -48,7 +48,7 @@ export const Search = styled.input`
   }
 
   @media (min-width: 1366px) {
-    padding: 1%;
-    width: 40vw
+    padding: 0.6%;
+    width: 25vw;
   }
 `;

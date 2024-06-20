@@ -10,6 +10,7 @@ export const Container = styled.div`
   padding-top: 20px;
   height: auto;
   width: 100vw;
+  padding: 1rem;
 
   .swiper {
     margin-block: 4%;
@@ -40,10 +41,9 @@ export const Container = styled.div`
 export const Button = styled.button`
   border: 0;
   border-radius: 10px;
-  background-color: var(--main-background);
+  background-color: var(--variant-background);
 
   padding: 1.5%;
-  margin-top: -5%;
   
   display: flex;
   align-items: center;
@@ -67,14 +67,14 @@ export const Image = styled.img<IComponents>`
   width: ${(props) => props.width ? props.width : '180px'};
   height: ${(props) => props.height ? props.height : '180px'};
   margin: 20px auto;
-  margin-bottom: 5px;
+  margin-bottom: 45px;
   display: block;
 `;
 
-export const Name = styled.h3`
+export const Name = styled.h1`
   color: var(--main-font-color);
   margin: 12px auto;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
   text-align: center;
 `;
 
@@ -82,7 +82,7 @@ export const Title = styled.h4`
   color: var(--main-font-color);
   text-align: center;
   width: 80vw;
-  margin: 0 auto;
+  margin: 2rem auto;
 `;
 
 export const Description = styled.p`
@@ -91,8 +91,4 @@ export const Description = styled.p`
   font-family: fantasy;
   text-align: center;
   margin-inline: 50px;
-`;
-
-export const PurchaseButton = styled.div`
-  
 `;

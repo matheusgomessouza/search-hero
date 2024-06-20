@@ -11,11 +11,11 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "^5.0.0",
     "styled-components": "^5.3.3",
-    "swiper": "^8.0.7",
+    "swiper": "^9.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "env-cmd -f .env react-scripts start",
+    "start": "env-cmd -f .env react-scripts start PORT=3000",
     "build": "env-cmd -f .env react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject"
@@ -60,6 +60,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "jest": "^27.5.1",
+    "miragejs": "^0.1.43",
     "prettier": "^2.6.1",
     "react-icons": "^4.3.1",
     "ts-jest": "^27.1.4",
