@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Background = styled.div`
-  background-image: url("https://wallpapercave.com/wp/wp3221720.jpg");
+export const Background = styled.main`
+  background-image: url("https://cdn.registerdisney.go.com/v4/asset/bundler/MARVEL/v4/images/v1/marvel-background-web.webp");
   background-size: cover;
   margin: 0;
   height: 100vh;
@@ -19,12 +19,12 @@ export const Form = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-`; 
+`;
 
 export const Heading = styled.h1`
   text-align: center;
   font-size: 2rem;
-  font-family: 'Limelight', cursive;
+  font-family: "Limelight", cursive;
   color: var(--main-font-color);
   text-shadow: 4px 2px var(--main-text-shadow-faded);
   margin-bottom: 0.7rem;
@@ -38,8 +38,9 @@ export const Search = styled.input`
   display: block;
   margin: 0 auto;
   border: none;
-  font-family: 'Limelight', cursive;
+  font-family: "Limelight", cursive;
   font-size: 1.1rem;
+  border-radius: 0.5rem;
 
   @media (max-width: 1024px) {
     padding: 3%;

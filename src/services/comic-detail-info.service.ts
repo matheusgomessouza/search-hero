@@ -1,6 +1,6 @@
-import { api } from '../services/api';
-import { hash, publicKey, ts } from '../models/constants';
-import { IComicsHeroInfoProps } from '../models/models';
+import { api } from "@services/api";
+import { hash, publicKey, ts } from "@models/constants";
+import { IComicsHeroInfoProps } from "@models/models";
 
 export async function comicInfoDetailService(heroID: number): Promise<IComicsHeroInfoProps[]> {
 	try {

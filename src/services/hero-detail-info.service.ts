@@ -1,6 +1,6 @@
-import { api } from '../services/api';
-import { hash, publicKey, ts } from '../models/constants';
-import { IHeroDetailProps } from '../models/models';
+import { api } from "@services/api";
+import { hash, publicKey, ts } from "@models/constants";
+import { IHeroDetailProps } from "@models/models";
 
 export async function getHeroDetailInfo(heroID: number): Promise<IHeroDetailProps[]> {  
 	try {

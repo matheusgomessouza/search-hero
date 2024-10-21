@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-import { IHeroProps } from '../../models/models';
-import { getHeroLabelService } from '../../services/search-hero.service';
+import { IHeroProps } from "@models/models";
+import { getHeroLabelService } from "@services/search-hero.service.ts";
 
-import SearchResultItem from '../../components/SearchResult';
+import SearchResultItem from "@components/SearchResult";
 
-import { Background, Form, Heading, Search } from './styles';
+import { Background, Form, Heading, Search } from "./styles";
 
 export default function Home() {
 	const [hero, setHero] = useState<IHeroProps[]>([]);
-	const [searchTerm, setSearchTerm] = useState<string>('');
+	const [searchTerm, setSearchTerm] = useState<string>("");
 	
 	useEffect(() => {
 		if (searchTerm && searchTerm.length > 4) {
@@ -32,7 +32,7 @@ export default function Home() {
 					onChange={(e) => setSearchTerm(e.target.value)}
 				/>
 				{hero.map(result => (
-					searchTerm !== '' && (
+					searchTerm !== "" && (
 						<SearchResultItem
 							key={result.id}
 							id={result.id} 

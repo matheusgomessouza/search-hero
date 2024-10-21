@@ -1,7 +1,7 @@
-import { createServer } from 'miragejs';
+import { createServer } from "miragejs";
 
 createServer({
 	routes() {
-		this.namespace = 'api';
+		this.namespace = "api";
 	}
 });

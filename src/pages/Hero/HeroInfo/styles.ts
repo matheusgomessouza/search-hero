@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface IComponents {
   width?: string;
@@ -64,8 +64,8 @@ export const Button = styled.button`
 
 export const Image = styled.img<IComponents>`
   border-radius: 7px;
-  width: ${(props) => props.width ? props.width : '180px'};
-  height: ${(props) => props.height ? props.height : '180px'};
+  width: ${(props) => props.width ? props.width : "180px"};
+  height: ${(props) => props.height ? props.height : "180px"};
   margin: 20px auto;
   margin-bottom: 45px;
   display: block;

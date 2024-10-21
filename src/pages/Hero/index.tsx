@@ -1,4 +1,4 @@
-import { HeroInfo } from './HeroInfo';
+import { HeroInfo } from "./HeroInfo";
 
 export function Hero() {
 	return (

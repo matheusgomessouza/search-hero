@@ -1,4 +1,4 @@
-import styled  from 'styled-components';
+import styled  from "styled-components";
 
 interface IFooterProps {
   width?: string;
@@ -6,7 +6,7 @@ interface IFooterProps {
 
 export const Container = styled.footer<IFooterProps>`
   width: 100vw;
-  width: ${(props) => props.width ? props.width : '100%'};;
+  width: ${(props) => props.width ? props.width : "100%"};;
   background: var(--variant-background);
   display: flex;
   justify-content: center;

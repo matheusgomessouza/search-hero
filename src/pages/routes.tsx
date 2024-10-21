@@ -1,10 +1,10 @@
 import {
 	Routes,
 	Route,
-} from 'react-router-dom';
-import { Hero } from './Hero';
-import { HeroInfo } from './Hero/HeroInfo';
-import Home from './Home';
+} from "react-router-dom";
+import { Hero } from "./Hero";
+import { HeroInfo } from "./Hero/HeroInfo";
+import Home from "./Home";
 
 export function Router() {
 	return (
