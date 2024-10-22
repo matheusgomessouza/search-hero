@@ -1,6 +1,6 @@
-import { api } from "./api";
-import { IHeroProps } from "@models/models";
-import { hash, publicKey, ts } from "@models/constants";
+import { api } from "@/services/marvel-api";
+import { IHeroProps } from "@/models/interfaces";
+import { hash, publicKey, ts } from "@/models/create-encryption";
 
 export async function getHeroLabelService(
   typedWord: string

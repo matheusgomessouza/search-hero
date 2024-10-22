@@ -7,10 +7,10 @@ import "swiper/css/pagination";
 import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { IComicsHeroInfoProps, IHeroDetailProps } from "@models/models";
+import { IComicsHeroInfoProps, IHeroDetailProps } from "@/models/interfaces";
 import { Button, Image, Name, Description, Container, Title } from "./styles";
-import { comicInfoDetailService } from "@services/comic-detail-info.service.ts";
-import { getHeroDetailInfo } from "@services/hero-detail-info.service.ts";
+import { comicInfoDetailService } from "@/services/comic-detail-info";
+import { getHeroDetailInfo } from "@/services/hero-detail-info";
 
 export function HeroInfo() {
   const [heroInformation, setHeroInformation] = useState<IHeroDetailProps[]>(
