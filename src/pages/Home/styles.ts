@@ -23,9 +23,11 @@ export const Form = styled.div`
 
 export const Heading = styled.h1`
   text-align: center;
-  font-size: 2rem;
-  font-family: "Limelight", cursive;
-  color: var(--main-font-color);
+  font-size: 3rem;
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: ${(props) => props.theme.textColorTwo};
   text-shadow: 4px 2px var(--main-text-shadow-faded);
   margin-bottom: 0.7rem;
 `;
@@ -38,8 +40,11 @@ export const Search = styled.input`
   display: block;
   margin: 0 auto;
   border: none;
-  font-family: "Limelight", cursive;
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
   font-size: 1.1rem;
+  color: ${(props) => props.theme.textColorThree};
   border-radius: 0.5rem;
 
   @media (max-width: 1024px) {
@@ -51,5 +56,6 @@ export const Search = styled.input`
   @media (min-width: 1366px) {
     padding: 0.6%;
     width: 25vw;
+    height: 2.5rem;
   }
 `;

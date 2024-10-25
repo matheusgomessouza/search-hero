@@ -15,7 +15,9 @@ export async function getHeroLabelService(
       id: element.id,
       name: element.name,
       description: element.description,
-      thumbnail: { path: element?.thumbnail?.path + ".webp" },
+      thumbnail: {
+        path: element?.thumbnail?.path + `.${element?.thumbnail.extension}`,
+      },
     }));
 
     return result;

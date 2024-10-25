@@ -17,7 +17,7 @@ export const Card = styled.div`
   }
 
   @media (min-width: 1366px) {
-    width: 40vw;
+    width: 25vw;
     padding: 1%;
   }
 

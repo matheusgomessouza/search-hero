@@ -87,8 +87,8 @@ export const Title = styled.h4`
 
 export const Description = styled.p`
   color: var(--main-font-color);
-  font-size: 1.4rem;
-  font-family: fantasy;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
   text-align: center;
   margin-inline: 50px;
 `;

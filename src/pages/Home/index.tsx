@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <Background>
       <Form>
-        <Heading>Tell me more about...</Heading>
+        <Heading>Search Hero</Heading>
         <Search
           type="search"
           placeholder="Type your hero name..."
@@ -37,7 +37,10 @@ export default function Home() {
               <SearchResultItemComponent
                 key={result.id}
                 id={result.id}
-                thumbnail={result.thumbnail.path}
+                thumbnail={{
+                  path: result.thumbnail.path,
+                  extension: result.thumbnail.extension,
+                }}
                 name={result.name}
               />
             )
