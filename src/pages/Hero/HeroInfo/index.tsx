@@ -19,7 +19,7 @@ export function HeroInfo() {
 		[],
 	);
 	const [heroComicInformation, setHeroComicInformation] = useState<
-    IComicsHeroInfoProps[] | undefined
+    IComicsHeroInfoProps[]
   >([]);
 	const navigate = useNavigate();
 
@@ -29,6 +29,9 @@ export function HeroInfo() {
 
 		const callHeroApi = async () => {
 			const fetchHeroDetailInfo = await getHeroDetailInfo(heroID);
+			if (!fetchHeroDetailInfo || fetchHeroDetailInfo.length === 0) {
+				return;
+			}
 			const { id, name, thumbnail, description } = fetchHeroDetailInfo[0];
 
 			setHeroInformation([

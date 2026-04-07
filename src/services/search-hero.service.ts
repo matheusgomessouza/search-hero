@@ -6,7 +6,9 @@ export async function getHeroLabelService(
 	typedWord: string,
 ): Promise<IHeroProps[]> {
 	const responseHeroData = await api.get(
-		`/v1/public/characters?name=${typedWord}&ts=${ts}&apikey=${publicKey}&hash=${hash}`,
+		`/v1/public/characters?name=${encodeURIComponent(
+			typedWord,
+		)}&ts=${ts}&apikey=${publicKey}&hash=${hash}`,
 	);
 
 	const heroReturned = responseHeroData.data.data.results;
