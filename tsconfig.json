@@ -7,7 +7,8 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "types": ["vite/client", "node", "jest", "@testing-library/jest-dom"],
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
