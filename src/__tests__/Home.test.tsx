@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { act } from '@testing-library/react';
 import Home from '../pages/Home';
 import { getHeroLabelService } from '../services/search-hero.service';
 
@@ -72,7 +73,8 @@ describe('Home page', () => {
 	});
 
 	test('it should not trigger API call for terms 3 chars or less', async () => {
-		const user = userEvent.setup();
+		jest.useFakeTimers();
+		const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
 
 		render(
 			<QueryClientProvider client={testQueryClient}>
@@ -86,11 +88,15 @@ describe('Home page', () => {
 		await user.type(searchBox, 'Wol');
 
 		// Wait for debounce time to pass
-		await new Promise((r) => setTimeout(r, 600));
+		act(() => {
+			jest.advanceTimersByTime(600);
+		});
 
 		// Make sure it did not show a scanning message
 		const scanningMessage = screen.queryByText(/Scanning S.H.I.E.L.D. databases/i);
 		expect(scanningMessage).not.toBeInTheDocument();
 		expect(getHeroLabelService).not.toHaveBeenCalled();
+		
+		jest.useRealTimers();
 	});
 });

@@ -1,6 +1,39 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Search Hero E2E Flow', () => {
+	test.beforeEach(async ({ page }) => {
+		// Intercept network requests to the Marvel API to prevent flakiness
+		await page.route('**/v1/public/characters*', async (route) => {
+			const url = route.request().url();
+			if (url.includes('Spider-Man')) {
+				await route.fulfill({
+					status: 200,
+					contentType: 'application/json',
+					body: JSON.stringify({
+						data: {
+							results: [
+								{
+									id: 1009610,
+									name: 'Spider-Man',
+									thumbnail: { path: 'http://example.com/spider-man', extension: 'jpg' },
+									description: 'Bitten by a radioactive spider.',
+								},
+							],
+						},
+					}),
+				});
+			} else if (url.includes('NonExistentHero123')) {
+				await route.fulfill({
+					status: 200,
+					contentType: 'application/json',
+					body: JSON.stringify({ data: { results: [] } }),
+				});
+			} else {
+				await route.continue();
+			}
+		});
+	});
+
 	test('User can search for a hero and navigate to details', async ({ page }) => {
 		// 1. Visit Homepage
 		await page.goto('/');
@@ -30,9 +63,9 @@ test.describe('Search Hero E2E Flow', () => {
 
 		// 2. Search for non-existent hero
 		const searchInput = page.getByRole('searchbox', { name: /Search Marvel Characters/i });
-		await searchInput.fill('UnknownHero12345XYZ');
+		await searchInput.fill('NonExistentHero123');
 
 		// 3. Validate empty state message
-		await expect(page.getByText(/No entities found matching "UnknownHero12345XYZ"/i)).toBeVisible({ timeout: 10000 });
+		await expect(page.getByText(/No entities found matching "NonExistentHero123"/i)).toBeVisible({ timeout: 10000 });
 	});
 });

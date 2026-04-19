@@ -154,7 +154,7 @@ const config = {
 	// ],
 
 	testPathIgnorePatterns: [
-		'\\\\node_modules\\\\',
+		'[/\\\\]node_modules[/\\\\]',
 		'<rootDir>/e2e/'
 	],
 
@@ -203,7 +203,7 @@ const config = {
 
 	// An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
 	transformIgnorePatterns: [
-	  '\\\\node_modules\\\\/(?!(msw|@mswjs|is-node-process))'
+	  '[/\\\\]node_modules[/\\\\](?!(msw|@mswjs|is-node-process))'
 	],
 
 	// An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
