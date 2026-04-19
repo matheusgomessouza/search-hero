@@ -1,10 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Home from '../pages/Home';
 import { getHeroLabelService } from '../services/search-hero.service';
 
 jest.mock('../services/search-hero.service');
+
+const createTestQueryClient = () => new QueryClient({
+	defaultOptions: {
+		queries: {
+			retry: false,
+		},
+	},
+});
 
 describe('Home page', () => {
 	test('it should render a SearchItem after typing a valid SearchTerm', async () => {
@@ -17,11 +26,14 @@ describe('Home page', () => {
 		]);
 
 		const user = userEvent.setup();
+		const testQueryClient = createTestQueryClient();
 
 		render(
-			<MemoryRouter>
-				<Home />
-			</MemoryRouter>,
+			<QueryClientProvider client={testQueryClient}>
+				<MemoryRouter>
+					<Home />
+				</MemoryRouter>
+			</QueryClientProvider>
 		);
 
 		const searchBox = screen.getByRole('searchbox');
@@ -29,7 +41,7 @@ describe('Home page', () => {
 
 		const SearchResult = await screen.findByRole(
 			'img',
-			{ name: 'Wolverine' },
+			{ name: 'Portrait of Wolverine' },
 			{ timeout: 5000 },
 		);
 		expect(SearchResult).toBeInTheDocument();

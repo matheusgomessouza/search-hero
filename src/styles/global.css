@@ -1,10 +1,16 @@
 :root {
-  --main-font-color: #fff;
-  --variant-font-color: #000;
-  --main-background: #000;
-  --variant-background: #fff;
-  --main-background-faded: rgba(0,0,0, 0.4);
-  --main-text-shadow-faded:rgba(0, 0, 0, 0.7);
+  --marvel-red: #E62429;
+  --main-font-color: #FFFFFF;
+  --variant-font-color: #AAAAAA;
+  --main-background: #121212;
+  --surface-background: rgba(30, 30, 30, 0.7);
+  --variant-background: var(--surface-background);
+  --main-background-faded: rgba(18, 18, 18, 0.85);
+  --main-text-shadow-faded: rgba(0, 0, 0, 0.8);
+  --skeleton-base: #2a2a2a;
+  --skeleton-highlight: #3a3a3a;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 * {
@@ -15,4 +21,8 @@
 
 body {
   background-color: var(--main-background);
+  font-family: var(--font-body);
+  color: var(--main-font-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
