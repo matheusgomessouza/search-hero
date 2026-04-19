@@ -1,7 +1,4 @@
-import { createServer } from 'miragejs';
+import { setupServer } from 'msw/node';
+import { handlers } from './handlers';
 
-createServer({
-	routes() {
-		this.namespace = 'api';
-	}
-});
+export const server = setupServer(...handlers);
