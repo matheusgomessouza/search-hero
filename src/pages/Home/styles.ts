@@ -4,7 +4,6 @@ export const Background = styled.div`
   background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 1)), url("https://wallpapercave.com/wp/wp3221720.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   min-height: 100vh;
   width: 100vw;
   display: flex;
@@ -13,6 +12,10 @@ export const Background = styled.div`
   flex-direction: column;
   padding-top: 15vh;
   overflow-y: auto;
+
+  @media (min-width: 768px) {
+    background-attachment: fixed;
+  }
 `;
 
 export const Form = styled.div`

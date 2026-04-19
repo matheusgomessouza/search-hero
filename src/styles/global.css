@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@500;700&display=swap');
-
 :root {
   --marvel-red: #E62429;
   --main-font-color: #FFFFFF;
   --variant-font-color: #AAAAAA;
   --main-background: #121212;
   --surface-background: rgba(30, 30, 30, 0.7);
+  --variant-background: var(--surface-background);
   --main-background-faded: rgba(18, 18, 18, 0.85);
   --main-text-shadow-faded: rgba(0, 0, 0, 0.8);
   --skeleton-base: #2a2a2a;

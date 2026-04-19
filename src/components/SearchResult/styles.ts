@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Card = styled.article`
+export const Card = styled(Link)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -13,6 +14,7 @@ export const Card = styled.article`
   padding: 1rem 1.5rem;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
 
   &:hover, &:focus-visible {
     transform: translateY(-4px);
@@ -24,6 +26,20 @@ export const Card = styled.article`
   &:focus-visible {
      box-shadow: 0 0 0 3px rgba(230, 36, 41, 0.5);
   }
+`;
+
+export const DisabledCard = styled.article`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  background: var(--surface-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  opacity: 0.7;
 `;
 
 export const Image = styled.img`
@@ -47,6 +63,7 @@ export const Title = styled.h3`
   color: var(--main-font-color);
   flex-grow: 1;
   letter-spacing: 1px;
+  margin: 0;
 `;
 
 export const ActionLink = styled.span`
